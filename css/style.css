@@ -122,7 +122,7 @@ ol {
 	position: relative;
 }
 
-.section-title h2:after {
+/* .section-title h2:after {
 	position: absolute;
 	left: 0;
 	bottom: -15px;
@@ -132,7 +132,7 @@ ol {
 	background: #24E082;
 	content: "";
 	margin: 0 auto;
-}
+} */
 
 .set-bg {
 	background-repeat: no-repeat;
@@ -1629,10 +1629,10 @@ ol {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	border: 1px solid #b2b2b2;
+	/* border: 1px solid #b2b2b2; */
 	font-size: 14px;
 	color: #b2b2b2;
-	font-weight: 700;
+	/* font-weight: 700; */
 	line-height: 28px;
 	text-align: center;
 	margin-right: 16px;
@@ -2337,7 +2337,7 @@ ol {
 	position: relative;
 }
 
-.blog__pagination:before {
+/* .blog__pagination:before {
 	position: absolute;
 	left: 0;
 	top: -29px;
@@ -2346,7 +2346,7 @@ ol {
 	background: #000000;
 	opacity: 0.1;
 	content: "";
-}
+} */
 
 /*---------------------
   Blog Sidebar

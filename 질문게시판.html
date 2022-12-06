@@ -25,9 +25,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
     <style>
-        .bn_nav1{
-            background-color: #24E082;
-        }
+        /*헤더*/
         .yh_header__menu {
             padding: 12px 0;
         }
@@ -93,7 +91,7 @@
 
         .yh_header__menu ul li a {
             font-size: 14px;
-            color: #000000;
+            color: #252525;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 2px;
@@ -106,6 +104,10 @@
             display: block;
         }
         
+        .bn_nav1{
+            background-color: #24E082;
+        } /*헤더끝======================================================*/
+
         /* 검색창 */
         #bn_navbar-search-input{
             border:0;
@@ -135,7 +137,88 @@
             right : 5px;
             top : 50%;
             transform : translatey(-50%);
+        }/* 검색창 끝=============================================== */
+
+        /*목차*/
+        .bn_index ul li{
+            list-style: none;
+            position: relative;
+            display: inline-block;
         }
+        
+        .bn_index a {
+            color: black;
+            
+        }
+        
+        .bn_index li:last-child a{
+            font-weight: 800;
+            color : #FD9F28;
+        }
+
+        /*일반 게시글 목록*/
+        .bn_boardlist{
+            border: 1px solid #DBE2EA;
+            height: 100%; 
+            overflow: hidden;
+            font-size:small;
+            text-align: center;
+        }
+
+        .bn_board_check{
+            color:#24E082;
+        }
+
+        .table th, .table td{
+            border: 0px;
+            padding:1rem;
+        }
+
+        .table tr{
+            border:0;
+        }
+        .bn_boardlist th:nth-child(3), .bn_boardlist td:nth-child(3) {
+            text-align: start;
+        }/*게시글목록끝===========================*/
+
+        /*상세검색*/
+        .bn_detail-search{
+            border:0.1rem solid #8496AE;
+            padding: 0.2rem;
+            border-radius: 20px;
+            color: #8496AE;
+            cursor : pointer;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            margin-right: 1rem;
+        }
+
+        #bn_detail-search-point{
+            border: 0.1rem solid #8496AE;
+            padding: 0.2rem;
+            border-radius: 20px;
+            color: #8496AE;
+            cursor : pointer;
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            margin-right: 1rem;
+            text-align: center;
+        }
+
+        #bn_detail-search-point:hover{
+            border: 0.2rem solid #24E082;
+        }
+
+        .bn_btn_search2{
+            background-color: #24E082;
+            color:white;
+            border-radius: 20px;
+            margin-right: 1rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+
 
     </style>
 </head>
@@ -214,6 +297,135 @@
     </nav>
     <!-- Header Section End -->
 
+
+    <div class="container">
+        <div class="bn_index mt-5">
+            <ul>
+                <li>Q&A</li>
+                <li> / </li>
+                <li><a href="#">둘러보기</a></li>
+                <li> <b>/</b> </li>
+                <li><a href="#">상세게시글</a></li>
+            </ul>
+        </div>
+
+        <div class="section-title" style="padding: 30px 0 10px 0;">
+            <h2>족저근막염 으로 검색한 결과입니다</h2>
+            <hr style="width:50vw; border:2px solid #24E082; background-color: #24E082;">
+        </div>
+
+        <div class="bn_boardlist mt-2">
+            <table class="table">
+                <thead>
+                  <tr class="text-teal-100">
+                    <div class="col-lg-3">
+                        <th scope="col">해결되었어요</th>
+                        <th scope="col">글번호</th>
+                    </div>
+                    <th scope="col" class="col-lg-4">제목</th>
+                    <th scope="col" class="col-lg-1">글쓴이</th>
+                    <th scope="col" class="col-lg-1">답변수</th>
+                    <th scope="col" class="col-lg-1">조회수</th>
+                    <th scope="col" class="col-lg-2">날짜</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="d-flex justify-content-center bn_board_check"><i class="bi bi-check-square-fill"></i></th>
+                        <td>1</td>
+                        <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Otto</td>
+                        <td>@mdo</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2022-12-06</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-flex justify-content-center bn_board_check"><i class="bi bi-square"></i></th>
+                        <td>2</td>
+                        <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Thornton</td>
+                        <td>@fat</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2022-12-06</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-flex justify-content-center bn_board_check"><i class="bi bi-check-square-fill"></i></th>
+                        <td>3</td>
+                        <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2022-12-06</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-flex justify-content-center bn_board_check"><i class="bi bi-check-square-fill"></i></th>
+                        <td>4</td>
+                        <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2022-12-06</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-flex justify-content-center bn_board_check"><i class="bi bi-check-square-fill"></i></th>
+                        <td>5</td>
+                        <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">Larry the Bird</td>
+                        <td>@twitter</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2022-12-06</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="d-flex justify-content-center bn_board_check"><i class="bi bi-check-square-fill"></i></th>
+                        <td>6</td>
+                        <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;"">왜 border-bottom 생겨서 날 괴롭게 해?</td>
+                        <td>@twitter</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2022-12-06</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            <div class="product__pagination blog__pagination d-flex justify-content-center mt-3 ">
+              <a href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+              <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+            </div>
+
+            <div class="row d-flex justify-content-center">
+                <div class="input-group mt-3 col-lg-6">
+                    <select class="form-select form-select-sm bn_detail-search">
+                        <option selected>카테고리 선택</option>
+                        <option value="제목내용">제목+내용</option>
+                        <option value="제목">제목</option>
+                        <option value="내용">내용</option>
+                        <option value="글쓴이">글쓴이</option>
+                    </select>
+                    <input type="text" class="form-control" id="bn_detail-search-point" placeholder="내용을 입력하세요">
+                    <button class="btn bn_btn_search2" >검색</button>
+                </div>
+            </div>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 </body>
 </html>
