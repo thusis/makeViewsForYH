@@ -8,6 +8,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ogani | Template</title>
 
+    <!--jQuery-->
+    <script src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
@@ -16,7 +19,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <!-- <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css"> -->
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -25,9 +28,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 
-
     <style>
-        
         /*  구글 폰트
         font-family: 'Hahmlet', serif;
         font-family: 'IBM Plex Sans KR', sans-serif;
@@ -229,53 +230,53 @@
             padding-right: 2rem;
         }
 
-        /*전문가 찾기*/
-        .bn_pro-box{
-            background-color: white;
-            border: 0px;
-            border-radius: 3rem;
-            box-shadow: 0 1rem 2rem rgb(0 0 0 / 10%); 
-            padding: 2rem;
-            font-size: small;
+        /*--*/
+        .bn_txt_strong {
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 0;
+            color: var(--color-default);
             font-family: 'IBM Plex Sans KR', sans-serif;
         }
 
-        .bn_pro-name{
-            font-weight: 700;
-            font-family: 'IBM Plex Sans KR', sans-serif;
-            margin-bottom: 1rem;
-        }
-
-        .bn_pro-profile{
-            vertical-align:middle;
-            width: 7rem;
-            height: 7rem;
-            border-radius: 20rem;
-        }
-
-        .bn_pro-icon{
-            width: 3.5rem;
-            height:3.5rem;
-            font-size:2.3rem;
-            border-radius: 1rem;
-            background-color: #24E082;
-            color:white;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-        
-        .bn_pro-btn{
+        .filebox .upload-name {
             display: inline-block;
-            height:3rem;
-            border-radius: 1rem;
-            background-color: #24E082;
-            color:white;
-            text-align: center;
-            margin-bottom: 1rem;
-            padding-left: 3.5rem;
-            padding-right: 3.5rem;
+            height: 40px;
+            padding: 0 10px;
+            vertical-align: middle;
+            border: 1px solid transparent;
+            width: 78%;
+            color: #999999;
         }
 
+        .filebox label {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            vertical-align: middle;
+            background-color: #999999;
+            cursor: pointer;
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        .filebox input[type="file"] {
+            position: absolute;
+            width: 0;
+            height: 0;
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+        }
+
+        #modalPillChoice{
+            position: fixed;
+            top:50%;
+            left:40%;
+            transform: translate(-25%, -50%);
+            width:70rem;
+            height:30rem;
+        }
 
     </style>
 </head>
@@ -352,181 +353,162 @@
             </div>
         </div>
     </nav>
-    <!-- Header Section End -->
+    <!-- Header Section End =================================================================-->
 
 
     <div class="container">
-
         <div class="bn_index mt-5">
             <ul>
                 <li>Q&A</li>
-                <li><b> / </b></li>
-                <li><a href="#">전문가 찾기</a></li>
+                <li> <b>/</b> </li>
+                <li><a href="#">질문하기</a></li>
             </ul>
         </div>
 
-        <div class="row mt-5">
-            <div class="input-group col">
-                <select class="form-select form-select-sm bn_detail-search ">
-                    <option selected>카테고리 선택</option>
-                    <option value="sortAnswer">답변 많은 순 보기</option>
-                    <option value="sortActivity">최근 활동순 보기</option>
-                    <option value="sortEnrolldate">최근 가입순 보기</option>
-                </select>
-            </div>
-            <div class="col"></div>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-light">전체</button>
-                <button type="button" class="btn btn-light">의사만</button>
-                <button type="button" class="btn btn-light">약사만</button>
-            </div> 
+        <div class="section-title" style="padding: 30px 0 10px 0;">
+            <h2>질문하기</h2>
+            <hr style="width:50vw; border:2px solid #24E082; background-color: #24E082;">
         </div>
-        <hr>
-    </div>
+
+        <form action="${contextPath}/writeQuestion.qa" method="post" enctype="multipart/form-data" >
         
+            <div class="mb-5">
+                <label for="title" class="form-label bn_txt_strong">제목</label>
+                <input type="text" class="form-control m-3" id="title" placeholder="제목을 입력하세요">
+            </div>
 
-<!-- =================================전문가 섹션=========================================== -->
-        <section class="bn_pro">
-            <div class="container">
-                <div class="row"> <!--===두 개 ===-->
-                    <div class="col-lg-6">
-                        <div class="row bn_pro-box m-1">
-                            <div class="col-lg-7  align-self-center">
-                                <h5 class="bn_pro-name">김가람&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #24E082; color:#ffffff; padding-left: 0.35rem; padding-right:0.35rem;">약사</span></h5>
-                                <span class="bn_pro-info">답변수 493개</span><br>
-                                <span class="bn_pro-info">전문과목 약학</span><br>
-                                <span class="bn_pro-info">소속 : 서울 중구 종로약국&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #8496AE; color:#ffffff; padding-left: 0.5rem; padding-right:0.5rem;">병원 정보 보기</span></span><br>
-                            </div>
-
-                            <div class="col-3 align-self-center">
-                                <img src="img/pro_profile1.png" class="bn_pro-profile" alt="...">
-                            </div>
-                            <div class="col-2 align-self-center">
-                                <div class="bn_pro-icon"><i class="bi bi-list-ul"></i></div>
-                                <div class="bn_pro-icon"><i class="bi bi-send"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="row bn_pro-box m-1">
-                            <div class="col-lg-7  align-self-center">
-                                <h5 class="bn_pro-name">남나눔&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #24E082; color:#ffffff; padding-left: 0.35rem; padding-right:0.35rem;">의사</span></h5>
-                                <span class="bn_pro-info">답변수 32개</span><br>
-                                <span class="bn_pro-info">전문과목 정형외과</span><br>
-                                <span class="bn_pro-info">소속 : 서울 중구 종로약국&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #8496AE; color:#ffffff; padding-left: 0.5rem; padding-right:0.5rem;">병원 정보 보기</span></span><br> 
-                            </div>
-
-                            <div class="col-3 align-self-center">
-                                <img src="img/pro_profile2.png" class="bn_pro-profile" alt="...">
-                            </div>
-                            <div class="col-2 align-self-center">
-                                <div class="bn_pro-icon"><i class="bi bi-list-ul"></i></div>
-                                <div class="bn_pro-icon"><i class="bi bi-send"></i></div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="mb-3">
+                <label for="content" class="form-label bn_txt_strong">내용</label>
+                <div class="row m-3">
+                    <button type="button" class="site-btn" id="selectPillBtn"><i class="bi bi-capsule"></i></button>
+                    <input type="text" class="inline" id="selectPill" placeholder="영양제 선택" style="border:0px; background-color: transparent;" disabled>
                 </div>
 
-                <div class="row mt-2"> <!--===두 개 ===-->
-                    <div class="col-lg-6">
-                        <div class="bn_pro-box">
-                            <div class="row">
-                                <div class="col-lg-8  align-self-center">
-                                    <h5 class="bn_pro-name">김가람&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #24E082; color:#ffffff; padding-left: 0.35rem; padding-right:0.35rem;">약사</span></h5>
-                                    <span class="bn_pro-info">답변수 493개</span><br>
-                                    <span class="bn_pro-info">전문과목 약학</span><br>
-                                    <span class="bn_pro-info">소속 : 서울 중구 종로약국&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #8496AE; color:#ffffff; padding-left: 0.5rem; padding-right:0.5rem;">병원 정보 보기</span></span><br> 
-                                </div>
-
-                                <div class="col-4 align-self-center">
-                                    <img src="img/pro_profile1.png" class="bn_pro-profile" alt="...">
-                                </div>
-                            </div>
-                            <br>
-
-                            <div class="row" style="padding: 1.5rem;"><span>친절과 사랑으로 전하는 복용상식! 10:00-19:00 상담가능합니다. 어쩌구 저쩌구 룰루리랄라라 친절과 사랑으로 전하는 복용상식! 10:00-19:00 상담가능합니다. 어쩌구 저쩌구 룰루리랄라라 친절과 사랑으로 전하는 복용상식! 10:00-19:00 상담가능합니다. 어쩌구 저쩌구 룰루리랄라라</span></div>
-                            <div class="row align-items-center">
-                                <div class="col-5 align-self-center text-center"><button class="btn bn_pro-btn"> 작성글 보기 </button></div>
-                                <div class="col-7 align-self-center text-center"><button class="btn bn_pro-btn"><i class="bi bi-send"></i> 채팅 상담 요청하기 </button></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <div class="bn_pro-box ms-2">
-                            <div class="row">
-                                <div class="col-lg-8  align-self-center">
-                                    <h5 class="bn_pro-name">남나눔&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #24E082; color:#ffffff; padding-left: 0.35rem; padding-right:0.35rem;">약사</span></h5>
-                                    <span class="bn_pro-info">답변수 32개</span><br>
-                                    <span class="bn_pro-info">전문과목 정형외과</span><br>
-                                    <span class="bn_pro-info">소속 : 서울 중구 종로약국&nbsp;&nbsp;<span class="badge rounded-pill" style="background-color: #8496AE; color:#ffffff; padding-left: 0.5rem; padding-right:0.5rem;">병원 정보 보기</span></span><br> 
-                                </div>
-
-                                <div class="col-4 align-self-center">
-                                    <img src="img/pro_profile2.png" class="bn_pro-profile" alt="...">
-                                </div>
-                            </div>
-                            <br>
-
-                            <div class="row" style="padding: 1.5rem;"><span>친절과 사랑으로 전하는 복용상식! 10:00-19:00 상담가능합니다. 어쩌구 저쩌구 룰루리랄라라 친절과 사랑으로 전하는 복용상식! 10:00-19:00 상담가능합니다. 어쩌구 저쩌구 룰루리랄라라 친절과 사랑으로 전하는 복용상식! 10:00-19:00 상담가능합니다. 어쩌구 저쩌구 룰루리랄라라</span></div>
-                            <div class="row align-items-center">
-                                <div class="col-5 align-self-center text-center"><button class="btn bn_pro-btn"> 작성글 보기 </button></div>
-                                <div class="col-7 align-self-center text-center"><button class="btn bn_pro-btn"><i class="bi bi-send"></i> 채팅 상담 요청하기 </button></div>
-                            </div>
-                        </div>
-                    </div>
-                   
+                <div class="filebox row m-3">
+                    <button type="button" class="site-btn" id="addFile"><i class="bi bi-paperclip"></i></button>
+                    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+                    <label for="file">파일찾기</label> 
+                    <input type="file" id="file">
                 </div>
- 
+
+
+                <textarea class="form-control" id="content" rows="20"></textarea>
+            </div>
+        </form>
+    
+        <div class="row float-right">
+            <button class="btn bn_btn_search2" style="background-color: white; color:black; border: 1px solid #24E082;" >취소</button>
+            <button class="btn bn_btn_search2">등록</button>
+        </div>
+
+    </div>
+
+<br>
+<br>
+<br>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="modalPillChoice" style="background-color: white;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-body p-4 text-center">
+                <!--영양제 목록 보여줄건데 이건 include 해야 할 것 같다!-->
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6><a href="#">Crab Pool Security</a></h6>
+                                <h5>$30.00</h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
 
             </div>
-    </section>
-    <br>
+            <div class="modal-footer flex-nowrap p-0">
+                <button type="button" class="btn btn-secondary">선택</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-    <div class="container">
-        
-               <div class="product__pagination blog__pagination d-flex justify-content-center mt-3 ">
-                   <a href="#">1</a>
-                   <a href="#">2</a>
-                   <a href="#">3</a>
-                   <a href="#">4</a>
-                   <a href="#">5</a>
-                   <a href="#">6</a>
-                   <a href="#"><i class="fa fa-long-arrow-right"></i></a>
-               </div>
-       
-               <div class="row d-flex justify-content-center">
-                   <div class="input-group mt-3 col-lg-6 col-md-3">
-                       <select class="form-select form-select-sm bn_detail-search">
-                           <option selected>카테고리 선택</option>
-                           <option value="제목내용">제목+내용</option>
-                           <option value="제목">제목</option>
-                           <option value="내용">내용</option>
-                           <option value="글쓴이">글쓴이</option>
-                       </select>
-                       <input type="text" class="form-control" id="bn_detail-search-point" placeholder="내용을 입력하세요">
-                       <button class="btn bn_btn_search2" >검색</button>
-                   </div>
-               </div>
+<script>
+    window.onload=()=>{
+        $("#file").on('change',function(){
+            var fileName = $("#file").val();
+            $(".upload-name").val(fileName);
+        });
+    }
+    
+    $("#selectPillBtn").click(function(){
+        $('#modalPillChoice').modal();
+    });
 
-    </div>       
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+</script>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
