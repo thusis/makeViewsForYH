@@ -33,11 +33,133 @@
     <!--fontawesome 아이콘-->
     <script src="https://kit.fontawesome.com/25fd41a4c0.js" crossorigin="anonymous"></script>
 
+    <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+  
+        .b-example-divider {
+          height: 3rem;
+          background-color: rgba(0, 0, 0, .1);
+          border: solid rgba(0, 0, 0, .15);
+          border-width: 1px 0;
+          box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+  
+        .b-example-vr {
+          flex-shrink: 0;
+          width: 1.5rem;
+          height: 100vh;
+        }
+  
+        .bi {
+          vertical-align: -.125em;
+          fill: currentColor;
+        }
+  
+        .nav-scroller {
+          position: relative;
+          z-index: 2;
+          height: 2.75rem;
+          overflow-y: hidden;
+        }
+  
+        .nav-scroller .nav {
+          display: flex;
+          flex-wrap: nowrap;
+          padding-bottom: 1rem;
+          margin-top: -1px;
+          overflow-x: auto;
+          text-align: center;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+      </style>
 </head>
 <body>
 
+    <main class="d-flex flex-nowrap">
 
-    
+    <!-- 첫번째 컬럼====================================================== -->
+    <div class="d-flex flex-column flex-shrink-0 bg-light" 
+    style="width: 4.5rem; height:75vh; border-top: 0.2rem solid #24E082; border-left: 0.2rem solid #24E082; border-radius: 2rem 0 0 0;">
+        <a href="/" class="d-block p-3 link-dark text-decoration-none" title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
+          <img src="img/logo.svg" alt="영해로고">
+        </a>
+        <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li>
+                <a href="#" class="nav-link py-3 border-bottom rounded-0" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <i class="bi bi-chevron-double-right"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
+                    <i class="bi bi-person-circle"></i>
+                </a>
+            </li>
+        </ul>
+        <div class="dropdown border-top">
+            <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small shadow">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 전문가목록============================================================= -->
+    <div id="chatProList" class="d-flex flex-column align-items-stretch flex-shrink-0 bg-light" style="width: 300px;  height:75vh; border-top: 0.2rem solid #24E082;">
+        <a href="/" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
+          <span class="fs-5 fw-semibold">전문가 목록</span>
+        </a>
+        <div class="list-group list-group-flush border-bottom scrollarea">
+            <a href="#" class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <strong class="mb-1">김가람</strong>
+                    <small>12분 전</small>
+                </div>
+                <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <strong class="mb-1">남나눔</strong>
+                    <small>58분 전</small>
+                </div>
+                <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <strong class="mb-1">도대담</strong>
+                    <small>1시간 전 </small>
+                </div>
+                <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                    <strong class="mb-1">문미미</strong>
+                    <small>1일 전</small>
+                </div>
+                <div class="col-10 mb-1 small">Some placeholder content in a paragraph below the heading and date.</div>
+            </a>
+        </div>
+    </div>
+
+</main>
 
 
 
