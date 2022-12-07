@@ -6,7 +6,7 @@
     <meta name="keywords" content="Ogani, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ogani | Template</title>
+    <title>질문하기</title>
 
     <!--jQuery-->
     <script src = "https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -15,270 +15,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <!-- <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css"> -->
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
+    <!--내가만든 css-->
+    <link rel="stylesheet" href="css/bn_style.css" type="text/css">
+
     <!-- 부트스트랩 아이콘 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
+    <!--fontawesome 아이콘-->
+    <script src="https://kit.fontawesome.com/25fd41a4c0.js" crossorigin="anonymous"></script>
 
-    <style>
-        /*  구글 폰트
-        font-family: 'Hahmlet', serif;
-        font-family: 'IBM Plex Sans KR', sans-serif;
-        font-family: 'Nanum Gothic', sans-serif; 
-        */
-        @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&family=Nanum+Gothic:wght@400;700;800&display=swap');
-
-
-        /*헤더*/
-        .yh_header__menu {
-            padding: 12px 0;
-        }
-        
-        .yh_header__menu ul li {
-            color:white;
-            list-style: none;
-            display: inline-block;
-            margin-right: 50px;
-            position: relative;
-        }
-
-        .yh_header__menu ul li .yh_header__menu__dropdown {
-            position: absolute;
-            left: 0;
-            /* top: 50px; */
-            background: #222222;
-            width: max-content;
-            /* z-index: 9; */
-            padding: 5px 0;
-            -webkit-transition: all, 0.3s;
-            -moz-transition: all, 0.3s;
-            -ms-transition: all, 0.3s;
-            -o-transition: all, 0.3s;
-            transition: all, 0.3s;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .yh_header__menu ul li .yh_header__menu__dropdown li {
-            margin-right: 0;
-            display: block;
-        }
-
-        .yh_header__menu ul li .yh_header__menu__dropdown li:hover>a {
-            color: #24E082;
-        }
-
-        .yh_header__menu ul li .yh_header__menu__dropdown li a {
-            text-transform: capitalize;
-            color: #ffffff;
-            font-weight: 400;
-            padding: 5px 15px;
-        }
-
-        .yh_header__menu ul li.active a {
-            color: #24E082;
-        }
-
-        .yh_header__menu ul li:hover .yh_header__menu__dropdown {
-            top: 30px;
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .yh_header__menu ul li:hover>a {
-            color: #FD9F28;
-        }
-
-        .yh_header__menu ul li:last-child {
-            margin-right: 0;
-        }
-
-        .yh_header__menu ul li a {
-            font-size: 14px;
-            color: #252525;
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 2px;
-            -webkit-transition: all, 0.3s;
-            -moz-transition: all, 0.3s;
-            -ms-transition: all, 0.3s;
-            -o-transition: all, 0.3s;
-            transition: all, 0.3s;
-            padding: 5px 0;
-            display: block;
-        }
-        
-        .bn_nav1{
-            background-color: #24E082;
-        } /*헤더끝======================================================*/
-
-        /* 검색창 */
-        #bn_navbar-search-input{
-            border:0;
-            background-color: rgb(242, 242, 242);
-            border-radius: 0px 20px 20px 0px ;
-        }
-
-        .bn_navbar-select-input{
-            border:0;
-            background-color: rgb(242, 242, 242);
-            cursor : pointer;
-            border-radius: 20px 0px 0px 20px;
-            padding-left: 10px;
-            
-        }
-
-        .bn_navbar-select-input option:checked,
-        .bn_navbar-select-input option:hover {
-            color:FD9F28;
-        }
-
-        .bn_btn_search{
-            background-color : transparent;
-            border : none;
-            cursor : pointer;
-            position : absolute;
-            right : 5px;
-            top : 50%;
-            transform : translatey(-50%);
-        }/* 검색창 끝=============================================== */
-
-        /*목차*/
-        .bn_index ul li{
-            list-style: none;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .bn_index a {
-            color: black;
-            
-        }
-        
-        .bn_index li:last-child a{
-            font-weight: 800;
-            color : #FD9F28;
-        }
-
-        /*일반 게시글 목록*/
-        .bn_boardlist{
-            border: 1px solid #DBE2EA;
-            height: 100%; 
-            overflow: hidden;
-            font-size:small;
-            text-align: center;
-        }
-
-        .bn_board_check{
-            color:#24E082;
-        }
-
-        .table th, .table td{
-            border: 0px;
-            padding:1rem;
-        }
-
-        .table tr{
-            border:0;
-        }
-        .bn_boardlist th:nth-child(3), .bn_boardlist td:nth-child(3) {
-            text-align: start;
-        }/*게시글목록끝===========================*/
-
-        /*상세검색*/
-        .bn_detail-search{
-            border:0.1rem solid #8496AE;
-            padding: 0.2rem;
-            border-radius: 20px;
-            color: #8496AE;
-            cursor : pointer;
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-            margin-right: 1rem;
-        }
-
-        #bn_detail-search-point{
-            border: 0.1rem solid #8496AE;
-            padding: 0.2rem;
-            border-radius: 20px;
-            color: #8496AE;
-            cursor : pointer;
-            padding-left: 0.75rem;
-            padding-right: 0.75rem;
-            margin-right: 1rem;
-            text-align: center;
-        }
-
-        #bn_detail-search-point:hover{
-            border: 0.2rem solid #24E082;
-        }
-
-        .bn_btn_search2{
-            background-color: #24E082;
-            color:white;
-            border-radius: 20px;
-            margin-right: 1rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-
-        /*--*/
-        .bn_txt_strong {
-            font-size: 1.5rem;
-            font-weight: 900;
-            line-height: 0;
-            color: var(--color-default);
-            font-family: 'IBM Plex Sans KR', sans-serif;
-        }
-
-        .filebox .upload-name {
-            display: inline-block;
-            height: 40px;
-            padding: 0 10px;
-            vertical-align: middle;
-            border: 1px solid transparent;
-            width: 78%;
-            color: #999999;
-        }
-
-        .filebox label {
-            display: inline-block;
-            padding: 10px 20px;
-            color: #fff;
-            vertical-align: middle;
-            background-color: #999999;
-            cursor: pointer;
-            height: 40px;
-            margin-left: 10px;
-        }
-
-        .filebox input[type="file"] {
-            position: absolute;
-            width: 0;
-            height: 0;
-            padding: 0;
-            overflow: hidden;
-            border: 0;
-        }
-
-        #modalPillChoice{
-            position: fixed;
-            top:50%;
-            left:40%;
-            transform: translate(-25%, -50%);
-            width:70rem;
-            height:30rem;
-        }
-
-    </style>
 </head>
 <body>
 
@@ -386,7 +140,7 @@
 
                 <div class="filebox row m-3">
                     <button type="button" class="site-btn" id="addFile"><i class="bi bi-paperclip"></i></button>
-                    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+                    <input class="upload-name" value="첨부파일" placeholder="첨부파일" readonly>
                     <label for="file">파일찾기</label> 
                     <input type="file" id="file">
                 </div>
