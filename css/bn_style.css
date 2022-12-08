@@ -24,8 +24,8 @@
         /* top: 50px; */
         background: #222222;
         width: max-content;
-        /* z-index: 9; */넹
-        padding: 5px 0;
+        /* z-index: 9; */
+        padding: 5px 0 ;
         -webkit-transition: all, 0.3s;
         -moz-transition: all, 0.3s;
         -ms-transition: all, 0.3s;
@@ -203,9 +203,9 @@
     .bn_pro-box{
         background-color: white;
         border: 0px;
-        border-radius: 3rem;
+        border-radius: 2rem;
         box-shadow: 0 1rem 2rem rgb(0 0 0 / 10%); 
-        padding: 2rem;
+        padding: 1.5rem;
         font-size: small;
         font-family: 'IBM Plex Sans KR', sans-serif;
     }
@@ -224,14 +224,16 @@
     }
 
     .bn_pro-icon{
-        width: 3.5rem;
-        height:3.5rem;
-        font-size:2.3rem;
+        width: 3rem;
+        height:3rem;
+        font-size:2rem;
         border-radius: 1rem;
         background-color: #24E082;
         color:white;
         text-align: center;
+        align-items: center;
         margin-bottom: 1rem;
+        /* align-items: center/; */
     }
     
     .bn_pro-btn{
@@ -242,8 +244,8 @@
         color:white;
         text-align: center;
         margin-bottom: 1rem;
-        padding-left: 3.5rem;
-        padding-right: 3.5rem;
+        /* padding-left: 3rem;
+        padding-right: 3rem; */
     } /*전문가 찾기 끝============*/
 
     .bn_pro-infobox-bottom{
@@ -351,3 +353,149 @@
         font-weight: 900;
         font-family: 'IBM Plex Sans KR', sans-serif;
     }
+
+    /*채팅방===============================================*/
+    .chat_lastmsg{
+        width:200px; text-overflow: ellipsis; overflow:hidden; white-space:nowrap;
+    }
+
+    .chat_wrap {
+        padding: 40px 0;
+        background-color: #ffffff;
+    }
+    
+    .chat_wrap .chat {
+        display: flex;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    
+    .chat_wrap .chat .icon {
+        position: relative;
+        overflow: hidden;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #eee;
+    }
+    
+    .chat_wrap .chat .icon i {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        font-size: 2.5rem;
+        color: #aaa;
+        transform: translateX(-50%);
+    }
+    
+    .chat_wrap .chat .textbox {
+        position: relative;
+        display: inline-block;
+        max-width: calc(80% - 70px);
+        padding: 10px;
+        margin-top: 7px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+    
+    .chat_wrap .chat .textbox::before {
+        position: absolute;
+        display: block;
+        top: 0;
+        font-size: 1rem;
+    }
+    
+    .chat_wrap .ch1 .textbox {
+        margin-left: 20px;
+        border: 0.15rem solid #24E082;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .chat_wrap .ch1mng .textbox {
+        margin-left: 20px;
+        background-color: #24E082;
+    }
+
+    .chat_wrap .ch1mng .icon {
+        position: relative;
+        overflow: hidden;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #24E082;
+    }
+    
+    .chat_wrap .ch1mng .icon img {
+        position: absolute; 
+        top: 10px;
+        left: 50%;
+        font-size: 2.5rem;
+        color: rgb(255, 255, 255);
+        transform: translateX(-50%);
+    }
+    
+    .textbox .bn_txt_strong{
+        font-size: 1rem;
+    }
+
+    /* .chat_wrap .ch1 .textbox::before {
+        left: -15px;
+        content: "◀";
+        color: #ddd;
+    } */
+    
+    .chat_wrap .ch2 {
+        flex-direction: row-reverse;
+    }
+    
+    .chat_wrap .ch2 .textbox {
+        margin-right: 20px;
+        background-color: #e6e6e6;
+    }
+    
+    /* .chat_wrap .ch2 .textbox::before {
+        right: -15px;
+        content: "▶";
+        color: #F9EB54;
+    } */
+
+    .sendtime{
+        font-size: 11px;
+        position:absolute;
+        right: -75px; 
+        bottom:5px; 
+        width:70px;
+    }
+    
+    .ch2 .textbox .sendtime{
+        font-size: 11px;
+        position:absolute;
+        left: -50px; 
+        bottom:5px; 
+        width:70px;
+    }
+
+    #bn_chat-input{    /* 채팅인풋 */
+        border: 0.2rem solid #24E082;
+        border-radius: 15px;
+        height: 3rem;
+    }
+
+    .bn_chat-inputbtn{
+        background-color : transparent;
+        border : none;
+        cursor : pointer;
+        position : absolute;
+        right : 5px;
+        top : 50%;
+        transform : translatey(-50%);
+    }
+    
+    .bn_chat-inputbtn:hover{
+        color:#FD9F28;
+    }
+
+    .chatpopup .active{
+        background-color: #8496AE;
+    }
+    /* 채팅방 끝=============================================== */
